@@ -6,7 +6,7 @@
         <meta charset="utf-8" />
         <title>Register | PT. Mattaoi Bumi Sikerei</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="PT. Mattaoi Bumi Sikerei platform website" name="description" />
+        <meta content="PT. Mattaoi Bumi Sikerei" name="description" />
         <meta content="Libertus" name="author" />
         <!-- App favicon -->
         <link rel="shortcut icon" href="{{ asset('as_logo/logo.png') }}">
@@ -77,14 +77,6 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group mb-3 row">
-                                    <div class="col-12">
-                                        <div class="custom-control custom-checkbox">
-
-                                        </div>
-                                    </div>
-                                </div>
-
                                 <div class="form-group text-center row mt-3 pt-1">
                                     <div class="col-12">
                                         <button class="btn btn-info w-100 waves-effect waves-light" type="submit">Register</button>
@@ -93,7 +85,7 @@
 
                                 <div class="form-group mt-2 mb-0 row">
                                     <div class="col-12 mt-3 text-center">
-                                        <a href="pages-login.html" class="text-muted">Already have account?</a>
+                                        <a href="{{ route('login') }}" class="text-muted">Already have account?</a>
                                     </div>
                                 </div>
                             </form>
