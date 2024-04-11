@@ -14,12 +14,14 @@ class AdminController extends Controller
     public function destroy(Request $request): RedirectResponse
     {
         Auth::guard('web')->logout();
-
         $request->session()->invalidate();
-
         $request->session()->regenerateToken();
+        $notification = array(
+            'message' => 'User logout successfully',
+            'alert-type' => 'success'
+        );
 
-        return redirect('/login');
+        return redirect('/login')->with($notification);
     }
 
     public function profile()
