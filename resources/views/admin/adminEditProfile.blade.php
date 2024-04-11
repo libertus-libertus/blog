@@ -31,8 +31,6 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <h4 class="card-title">Edit Data</h4>
-
                         <form action="{{ route('store.profile') }}" method="post" enctype="multipart/form-data">
                             @csrf
 
