@@ -1,9 +1,6 @@
 @extends('admin/main')
 @section('content')
 
-<!-- script javascript -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
 <div class="page-content">
     <div class="container-fluid">
 
@@ -30,8 +27,10 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <form action="" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('update.slider') }}" method="post" enctype="multipart/form-data">
                             @csrf
+
+                            <input type="hidden" name="id" value="{{ $homeSlider->id }}">
 
                             <div class="row mb-3">
                                 <label for="title" class="col-sm-2 col-form-label">Title</label>
@@ -61,16 +60,10 @@
                                 <label for="home_slide" class="col-sm-2 col-form-label">Profile Image</label>
                                 <div class="col-sm-10">
                                     <input class="form-control" type="file" id="home_slide" name="home_slide">
+                                    <img src="{{ asset($homeSlider->home_slide) }}" alt="">
                                 </div>
                             </div>
                             <!-- end row -->
-
-                            <div class="row mb-3">
-                                <div class="col-sm-2"></div>
-                                <div class="col-sm-10">
-                                    <img class="card-img-top img-fluid" id="showImageSlider" src="{{ asset(!empty($homeSlider->home_slide)) ? url('upload_images/frontend/'.$homeSlider->home_slide) : url('upload_images/no_image.jpg') }}">
-                                </div>
-                            </div>
 
                             <!-- end row -->
                             <div class="row mb-3">
@@ -88,17 +81,5 @@
     </div>
 
 </div>
-
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('#home_slide').change(function(e) {
-            var reader = new FileReader()
-            reader.onload = function(e) {
-                $('#showImageSlider').attr('src', e.target.result);
-            }
-            reader.readAsDataURL(e.target.files['0']);
-        });
-    });
-</script>
 
 @endsection

@@ -30,6 +30,7 @@ Route::controller(AdminController::class)->group(function() {
 // landingPage -> frontend
 Route::controller(HomeSliderController::class)->group(function() {
     Route::get('/home/slide', 'homeSlider')->name('home.slide');
+    Route::post('/update/slider', 'updateSlider')->name('update.slider');
 });
 
 Route::get('/dashboard', function () {
