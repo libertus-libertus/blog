@@ -23,7 +23,7 @@ class HomeSliderController extends Controller
             $nameGenerate = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
 
             // Model Image::make(blablabla) tinggal menggunakan "use Image" saja.
-            Image::make($image)->resize(636, 852)->save('upload_images/frontend/'.$nameGenerate);
+            Image::make($image)->resize(2048, 1365)->save('upload_images/frontend/'.$nameGenerate);
             $saveUrl = 'upload_images/frontend/'.$nameGenerate;
 
             HomeSlide::findOrFail($slideID)->update([
