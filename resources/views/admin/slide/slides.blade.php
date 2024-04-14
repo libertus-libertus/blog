@@ -11,13 +11,12 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0">Edit Data</h4>
+                    <h4 class="mb-sm-0">Edit Slider</h4>
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="{{ url('/dashboard') }}">PT. Mattaoi Bumi Sikerei</a></li>
-                            <li class="breadcrumb-item active"><a href="{{ route('admin.profile') }}">Profile Setting</a></li>
-                            <li class="breadcrumb-item active">Edit Profile</li>
+                            <li class="breadcrumb-item active">Edit Slider</li>
                         </ol>
                     </div>
 
@@ -31,37 +30,37 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <form action="{{ route('store.profile') }}" method="post" enctype="multipart/form-data">
+                        <form action="" method="post" enctype="multipart/form-data">
                             @csrf
 
                             <div class="row mb-3">
-                                <label for="name" class="col-sm-2 col-form-label">Name</label>
+                                <label for="title" class="col-sm-2 col-form-label">Title</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" type="text" value="{{ $editData->name }}" id="name" name="name" placeholder="Name" required autofocus autocomplete="off">
+                                    <input class="form-control" type="text" value="{{ $homeSlider->title }}" id="title" name="title" placeholder="Title" required autofocus>
                                 </div>
                             </div>
                             <!-- end row -->
 
                             <div class="row mb-3">
-                                <label for="email" class="col-sm-2 col-form-label">E-Mail</label>
+                                <label for="short_title" class="col-sm-2 col-form-label">Description</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" type="email" value="{{ $editData->email }}" id="email" name="email" placeholder="E-Mail" required>
+                                    <textarea class="form-control" id="short_title" name="short_title" rows="3" required>{{ $homeSlider->short_title }}</textarea>
                                 </div>
                             </div>
                             <!-- end row -->
 
                             <div class="row mb-3">
-                                <label for="username" class="col-sm-2 col-form-label">Username</label>
+                                <label for="video_url" class="col-sm-2 col-form-label">Video URL</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" type="text" value="{{ $editData->username }}" id="username" name="username" placeholder="Username" required>
+                                    <input class="form-control" type="text" value="{{ $homeSlider->video_url }}" id="video_url" name="video_url" placeholder="URL :" required>
                                 </div>
                             </div>
                             <!-- end row -->
 
                             <div class="row mb-3">
-                                <label for="profileImage" class="col-sm-2 col-form-label">Profile Image</label>
+                                <label for="home_slide" class="col-sm-2 col-form-label">Profile Image</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" type="file" id="profileImage" name="profileImage">
+                                    <input class="form-control" type="file" id="home_slide" name="home_slide">
                                 </div>
                             </div>
                             <!-- end row -->
@@ -69,7 +68,7 @@
                             <div class="row mb-3">
                                 <div class="col-sm-2"></div>
                                 <div class="col-sm-10">
-                                    <img class="card-img-top img-fluid" id="showImageProfile" src="{{ asset(!empty($editData->profileimage)) ? url('upload_images/backend/'.$editData->profileimage) : url('upload_images/no_image.jpg') }}">
+                                    <img class="card-img-top img-fluid" id="showImageSlider" src="{{ asset(!empty($homeSlider->home_slide)) ? url('upload_images/frontend/'.$homeSlider->home_slide) : url('upload_images/no_image.jpg') }}">
                                 </div>
                             </div>
 
@@ -77,7 +76,7 @@
                             <div class="row mb-3">
                                 <div class="col-sm-2"></div>
                                 <div class="col-sm-8">
-                                    <input type="submit" value="Update Profile" class="btn btn-info btn-sm btn-flat waves-effect waves-light">
+                                    <input type="submit" value="Update Slider" class="btn btn-info btn-sm btn-flat waves-effect waves-light">
                                 </div>
                             </div>
                             <!-- end row -->
@@ -92,10 +91,10 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
-        $('#profileImage').change(function(e) {
+        $('#home_slide').change(function(e) {
             var reader = new FileReader()
             reader.onload = function(e) {
-                $('#showImageProfile').attr('src', e.target.result);
+                $('#showImageSlider').attr('src', e.target.result);
             }
             reader.readAsDataURL(e.target.files['0']);
         });

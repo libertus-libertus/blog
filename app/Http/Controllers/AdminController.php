@@ -38,6 +38,7 @@ class AdminController extends Controller
         return view('admin.adminEditProfile', compact('editData'));
     }
 
+    // saveData
     public function storeProfile(Request $request)
     {
         $id = Auth::user()->id;
@@ -50,7 +51,7 @@ class AdminController extends Controller
             $file = $request->file('profileImage');
 
             $filename = date('YmdHi').$file->getClientOriginalName();
-            $file->move(public_path('backend/images'), $filename);
+            $file->move(public_path('upload_images/backend'), $filename);
             $data['profileImage'] = $filename;
         }
 

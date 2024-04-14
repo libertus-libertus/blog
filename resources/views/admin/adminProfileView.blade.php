@@ -25,7 +25,7 @@
             <div class="col-lg-4">
                 <div class="card">
                     <div class="m-auto p-3">
-                        <img class="card-img-top img-fluid" src="{{ asset(!empty($adminData->profileimage)) ? url('backend/images/'.$adminData->profileimage) : url('backend/no_image.jpg') }}" alt="no image">
+                        <img class="card-img-top img-fluid" src="{{ asset(!empty($adminData->profileimage)) ? url('upload_images/backend/'.$adminData->profileimage) : url('upload_images/no_image.jpg') }}">
                     </div>
                     <div class="card-body">
                         <h4 class="card-title"><em><strong>{{ $adminData->name }}</strong></em></h4>

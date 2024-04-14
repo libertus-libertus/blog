@@ -52,7 +52,7 @@
                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img class="rounded-circle header-profile-user"
-                        src="{{ asset(!empty($adminData->profileimage)) ? url('backend/images/'.$adminData->profileimage) : url('backend/no_image.jpg') }}" alt="Header Avatar">
+                        src="{{ asset(!empty($adminData->profileimage)) ? url('upload_images/backend/'.$adminData->profileimage) : url('upload_images/no_image.jpg') }}" alt="Header Avatar">
                     <span class="d-none d-xl-inline-block ms-1">{{ $adminData->name }}</span>
                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                 </button>
@@ -65,8 +65,6 @@
                     <a class="dropdown-item d-block" href="#">
                         <i class="ri-settings-2-line align-middle me-1"></i> Settings
                     </a>
-                    {{-- <a class="dropdown-item" href="#"><i class="ri-lock-unlock-line align-middle me-1"></i> Lock
-                        screen</a> --}}
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item text-danger" href="{{ route('admin.logout') }}">
                         <i class="ri-shut-down-line align-middle me-1 text-danger"></i> Logout
