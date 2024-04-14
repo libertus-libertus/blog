@@ -16,7 +16,7 @@
                     <h2 class="title wow fadeInUp" data-wow-delay=".2s">
                         <span>{{ $homeSlider->title }}</span>
                     </h2>
-                    <p class="wow fadeInUp" data-wow-delay=".4s" style="text-align: justify">{{ $homeSlider->short_title }}</p>
+                    <p class="wow fadeInUp" data-wow-delay=".4s" style="text-align: justify;">{{ $homeSlider->short_title }}</p>
                     <a href="contact.html" class="btn banner__btn wow fadeInUp" data-wow-delay=".6s">more about us</a>
                 </div>
             </div>

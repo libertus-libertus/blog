@@ -8,7 +8,7 @@
                         <h4 class="title">+62 813-4611-1649</h4>
                     </div>
                     <div class="footer__widget__text">
-                        <p style="text-align: justify"><strong>PT. Mattaoi Bumi Sikerei (MBS)</strong> adalah perusahaan inovatif Mentawai yang bergerak di bidang teknologi digital dan pemasaran jasa sebagai virtual asisten yang mencakup web development, entry data, pembuatan presentasi PowerPoint yang profesional, konversi file, dan penghapusan latar belakang gambar, dan sebagainya.</p>
+                        <p style="text-align: justify"><strong>{{ config('app.name') }}</strong>adalah pionir dalam solusi digitalisasi terkini yang lahir dari inovasi anak-anak Mentawai. Kami menerjemahkan kearifan lokal menjadi teknologi modern, menyediakan solusi digital yang memperkaya kehidupan sehari-hari. Dengan fokus pada kebutuhan unik komunitas, kami menciptakan platform yang memajukan akses, koneksi, dan pertumbuhan ekonomi di wilayah Mentawai dan sekitarnya.</p>
                     </div>
                 </div>
             </div>
@@ -31,7 +31,6 @@
                         <h4 class="title">socially connect</h4>
                     </div>
                     <div class="footer__widget__social">
-                        <p>Jangan lupa untuk mengikuti kami lewat akun di bawah.</p>
                         <ul class="footer__social__list">
                             <li><a target="_blank" href="https://facebook.com/libertussabebeget"><i class="fab fa-facebook-f"></i></a></li>
                             <li><a target="_blank" href="https://twitter.com/libertuslin"><i class="fab fa-twitter"></i></a></li>
@@ -47,7 +46,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="copyright__text text-center">
-                        <p>Copyright &copy; <strong>PT. Mattaoi Bumi Sikerei</strong>, <script>document.write(new Date().getFullYear())</script></p>
+                        <p>Copyright &copy; <strong>{{ config('app.name') }}</strong>, <script>document.write(new Date().getFullYear())</script></p>
                     </div>
                 </div>
             </div>

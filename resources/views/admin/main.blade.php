@@ -4,10 +4,10 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>Dashboard | PT. Mattaoi Bumi Sikerei</title>
+    <title>{{ config('app.name') }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-    <meta content="Themesdesign" name="author" />
+    <meta content="PT. Nusa Mentawai Solusi Digital Terdepan Mentawai" name="description" />
+    <meta content="Libertus" name="author" />
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{ asset('as_logo/favicon.png') }}">
 
@@ -123,10 +123,16 @@
 
             case 'error':
             toastr.error(" {{ Session::get('message') }} ");
-            break; 
+            break;
         }
-        @endif 
+        @endif
     </script>
+
+    <!--tinymce js-->
+    <script src="{{ asset('backend/assets/libs/tinymce/tinymce.min.js') }}"></script>
+
+    <!-- init js -->
+    <script src="{{ asset('backend/assets/js/pages/form-editor.init.js') }}"></script>
 </body>
 
 </html>

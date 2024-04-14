@@ -11,11 +11,11 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0">Edit Data</h4>
+                    <h4 class="mb-sm-0">Edit Profile</h4>
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item"><a href="{{ url('/dashboard') }}">PT. Mattaoi Bumi Sikerei</a></li>
+                            <li class="breadcrumb-item"><a href="{{ url('/dashboard') }}">{{ config('app.name') }}</a></li>
                             <li class="breadcrumb-item active"><a href="{{ route('admin.profile') }}">Profile Setting</a></li>
                             <li class="breadcrumb-item active">Edit Profile</li>
                         </ol>
@@ -68,7 +68,7 @@
 
                             <div class="row mb-3">
                                 <div class="col-sm-2"></div>
-                                <div class="col-sm-10">
+                                <div class="col-sm-4">
                                     <img class="card-img-top img-fluid" id="showImageProfile" src="{{ asset(!empty($editData->profileimage)) ? url('upload_images/backend/'.$editData->profileimage) : url('upload_images/no_image.jpg') }}">
                                 </div>
                             </div>

@@ -11,7 +11,7 @@
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item"><a href="{{ url('/dashboard') }}">PT. Mattaoi Bumi Sikerei</a></li>
+                            <li class="breadcrumb-item"><a href="{{ url('/dashboard') }}">{{ config('app.name') }}</a></li>
                             <li class="breadcrumb-item active">Profile Setting</li>
                         </ol>
                     </div>
@@ -32,7 +32,7 @@
 
                         <span class="card-text">
                             <small class="text-muted">Your e-Mail: {{ $adminData->email }}</small>
-                        </span> |
+                        </span> <br>
                         <span class="card-text">
                             <small class="text-muted">Username: {{ $adminData->username }}</small>
                         </span>

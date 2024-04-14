@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Home\HomeSliderController;
+use App\Http\Controllers\Home\AboutController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Demo\DemoController;
 use App\Http\Controllers\AdminController;
@@ -27,10 +28,16 @@ Route::controller(AdminController::class)->group(function() {
     Route::post('/update/password', 'updatePassword')->name('update.password');
 });
 
-// landingPage -> frontend
+// landingPage -> heroSection
 Route::controller(HomeSliderController::class)->group(function() {
     Route::get('/home/slide', 'homeSlider')->name('home.slide');
     Route::post('/update/slider', 'updateSlider')->name('update.slider');
+});
+
+// landingPage -> aboutSection
+Route::controller(AboutController::class)->group(function() {
+    Route::get('/about/page', 'aboutPage')->name('about.page');
+    Route::post('/update/about', 'updateAbout')->name('update.about');
 });
 
 Route::get('/dashboard', function () {

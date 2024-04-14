@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-6">
-                PT. Mattaoi Bumi Sikerei, <script>document.write(new Date().getFullYear())</script>.
+                {{ config('app.name') }}, <script>document.write(new Date().getFullYear())</script>.
             </div>
             <div class="col-sm-6">
                 <div class="text-sm-end d-none d-sm-block">

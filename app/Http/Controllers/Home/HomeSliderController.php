@@ -22,8 +22,8 @@ class HomeSliderController extends Controller
             $image = $request->file('home_slide');
             $nameGenerate = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
 
-            // Model Image::make(blablabla) tinggal menggunakan "use Image" saja.
-            Image::make($image)->resize(2048, 1365)->save('upload_images/frontend/'.$nameGenerate);
+            Image::make($image)->resize(5428, 3616)->save('upload_images/frontend/'.$nameGenerate); // cover normal size
+            // Image::make($image)->resize(288, 288)->save('upload_images/frontend/'.$nameGenerate); // potrait size
             $saveUrl = 'upload_images/frontend/'.$nameGenerate;
 
             HomeSlide::findOrFail($slideID)->update([

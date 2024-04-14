@@ -21,10 +21,18 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-mail-send-line"></i>
-                        <span>Home Slide Setup</span>
+                        <span>Landing Page Setting</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{ route('home.slide') }}">Home Slide</a></li>
+                        <li><a href="{{ route('home.slide') }}">Hero Section</a></li>
+                        <li><a href="{{ route('about.page') }}">About</a></li>
+                        <li><a href="">Services</a></li>
+                        <li><a href="">Work Process</a></li>
+                        <li><a href="">Portfolio</a></li>
+                        <li><a href="">Partner</a></li>
+                        <li><a href="">Testimonials</a></li>
+                        <li><a href="">Blog</a></li>
+                        <li><a href="">Contact</a></li>
                     </ul>
                 </li>
 
