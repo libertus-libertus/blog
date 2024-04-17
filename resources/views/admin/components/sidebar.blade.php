@@ -29,14 +29,12 @@
                             <a href="javascript: void(0);" class="has-arrow">About Page</a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li><a href="{{ route('about.page') }}">About</a></li>
-                                <li><a href="{{ route('about.multi.image') }}">About Multi Image</a></li>
+                                <li><a href="{{ route('about.multi.image') }}">Add Multi Image</a></li>
                                 <li><a href="{{ route('all.multi.image') }}">All Multi Image</a></li>
                             </ul>
                         </li>
-                        <li><a href="">About Multi Image</a></li>
-                        <li><a href="">Services</a></li>
+                        <li><a href="{{ route('portfolio.page') }}">Portfolio</a></li>
                         <li><a href="">Work Process</a></li>
-                        <li><a href="">Portfolio</a></li>
                         <li><a href="">Partner</a></li>
                         <li><a href="">Testimonials</a></li>
                         <li><a href="">Blog</a></li>

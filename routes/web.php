@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Home\HomeSliderController;
 use App\Http\Controllers\Home\AboutController;
+use App\Http\Controllers\Home\PortfolioController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Demo\DemoController;
 use App\Http\Controllers\AdminController;
@@ -49,6 +50,13 @@ Route::controller(AboutController::class)->group(function() {
     Route::get('/edit/multi/image/{id}', 'editMultiImage')->name('edit.multi.image');
     Route::post('/update/multi/image', 'updateMultiImage')->name('update.multi.image');
     Route::get('/delete/multi/image/{id}', 'deleteMultiImage')->name('delete.multi.image');
+});
+
+// landingPage -> portfolioSection
+Route::controller(PortfolioController::class)->group(function() {
+    Route::get('/portfolio/page', 'portfolioPage')->name('portfolio.page');
+    Route::get('/add/portfolio/page', 'addPortfolioPage')->name('add.portfolio.page');
+    Route::post('/store/portfolio/page', 'storePortfolioPage')->name('store.portfolio.page');
 });
 
 Route::get('/dashboard', function () {
