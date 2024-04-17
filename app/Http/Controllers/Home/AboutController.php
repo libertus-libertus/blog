@@ -96,4 +96,9 @@ class AboutController extends Controller
 
         return redirect()->back()->with($notification);
     } // endMethod
+
+    public function allMultiImage() {
+        $allMultiImage = MultiImage::all();
+        return view('admin.about.all_multi_images', compact('allMultiImage'));
+    } // endMethod
 }
