@@ -42,7 +42,7 @@
                                         <td>{{ $no++ }}</td>
                                         <td><img src="{{ asset($item->multi_image) }}" width="50"></td>
                                         <td>
-                                            <a href="" class="btn btn-info btn-sm" title="Edit Data">
+                                            <a href="{{ route('edit.multi.image', $item->id) }}" class="btn btn-info btn-sm" title="Edit Data">
                                                 <i class="fas fa-edit"></i>
                                                 Edit
                                             </a>

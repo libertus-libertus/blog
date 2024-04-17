@@ -94,11 +94,42 @@ class AboutController extends Controller
             'alert-type' => 'success'
         );
 
-        return redirect()->back()->with($notification);
+        return redirect()->route('all.multi.image')->with($notification);
     } // endMethod
 
-    public function allMultiImage() {
+    public function allMultiImage()
+    {
         $allMultiImage = MultiImage::all();
         return view('admin.about.all_multi_images', compact('allMultiImage'));
+    } // endMethod
+
+    public function editMultiImage($id)
+    {
+        $editMultiImage = MultiImage::findOrFail($id);
+        return view('admin.about.edit_multi_images', compact('editMultiImage'));
+    } // endMethod
+
+    public function updateMultiImage(Request $request)
+    {
+        $multiImageID = $request->id;
+
+        if ($request->file('multi_image')) {
+            $image = $request->file('multi_image');
+            $nameGenerate = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+
+            Image::make($image)->resize(100, 100)->save('upload_images/frontend/about/' . $nameGenerate);
+            $saveUrl = 'upload_images/frontend/about/' . $nameGenerate;
+
+            MultiImage::findOrFail($multiImageID)->update([
+                'multi_image' => $saveUrl,
+            ]);
+
+            $notification = array(
+                'message' => 'Multi images has been updated successfully',
+                'alert-type' => 'success'
+            );
+
+            return redirect()->route('all.multi.image')->with($notification);
+        }
     } // endMethod
 }
