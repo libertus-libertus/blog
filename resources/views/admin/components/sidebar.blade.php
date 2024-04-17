@@ -25,7 +25,14 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('home.slide') }}">Hero Section</a></li>
-                        <li><a href="{{ route('about.page') }}">About</a></li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">About Page</a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li><a href="{{ route('about.page') }}">About</a></li>
+                                <li><a href="{{ route('about.multi.image') }}">About Multi Image</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">About Multi Image</a></li>
                         <li><a href="">Services</a></li>
                         <li><a href="">Work Process</a></li>
                         <li><a href="">Portfolio</a></li>
@@ -51,17 +58,6 @@
                                 <li><a href="layouts-boxed.html">Boxed Layout</a></li>
                                 <li><a href="layouts-preloader.html">Preloader</a></li>
                                 <li><a href="layouts-colored-sidebar.html">Colored Sidebar</a></li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow">Horizontal</a>
-                            <ul class="sub-menu" aria-expanded="true">
-                                <li><a href="layouts-horizontal.html">Horizontal</a></li>
-                                <li><a href="layouts-hori-topbar-light.html">Topbar light</a></li>
-                                <li><a href="layouts-hori-boxed-width.html">Boxed width</a></li>
-                                <li><a href="layouts-hori-preloader.html">Preloader</a></li>
-                                <li><a href="layouts-hori-colored-header.html">Colored Header</a></li>
                             </ul>
                         </li>
                     </ul>
