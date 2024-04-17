@@ -54,9 +54,12 @@ Route::controller(AboutController::class)->group(function() {
 
 // landingPage -> portfolioSection
 Route::controller(PortfolioController::class)->group(function() {
-    Route::get('/portfolio/page', 'portfolioPage')->name('portfolio.page');
-    Route::get('/add/portfolio/page', 'addPortfolioPage')->name('add.portfolio.page');
-    Route::post('/store/portfolio/page', 'storePortfolioPage')->name('store.portfolio.page');
+    Route::get('/portfolio/page', 'portfolioPage')->name('portfolio.page'); // showData
+    Route::get('/add/portfolio/page', 'addPortfolioPage')->name('add.portfolio.page'); // formAddData
+    Route::post('/store/portfolio/page', 'storePortfolioPage')->name('store.portfolio.page'); // saveData
+    Route::get('/edit/portfolio/page/{id}', 'editPortfolioPage')->name('edit.portfolio.page'); // formEditData
+    Route::post('/update/portfolio/page/', 'updatePortfolioPage')->name('update.portfolio.page'); // updateData
+    Route::get('/delete/portfolio/page/{id}', 'deletePortfolioPage')->name('delete.portfolio.page'); // deleteData
 });
 
 Route::get('/dashboard', function () {
