@@ -4,6 +4,7 @@ use App\Http\Controllers\Home\HomeSliderController;
 use App\Http\Controllers\Home\AboutController;
 use App\Http\Controllers\Home\PortfolioController;
 use App\Http\Controllers\Home\CategoryController;
+use App\Http\Controllers\Home\BlogController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 
@@ -58,6 +59,15 @@ Route::controller(CategoryController::class)->group(function () {
     Route::get('/edit/category/page/{id}', 'editCategoryPage')->name('edit.category.page'); // formEditData
     Route::post('/update/category/page', 'updateCategoryPage')->name('update.category.page'); // updateData
     Route::get('/delete/category/page/{id}', 'deleteCategoryPage')->name('delete.category.page'); // deleteData
+});
+
+Route::controller(BlogController::class)->group(function () {
+    Route::get('/blog/page', 'blogPage')->name('blog.page'); // showData
+    Route::get('/add/blog/page', 'addBlogPage')->name('add.blog.page'); // formAddData
+    Route::post('/store/blog/page', 'storeBlogPage')->name('store.blog.page'); // saveData
+    Route::get('/edit/blog/page/{id}', 'editBlogPage')->name('edit.blog.page'); // formEditData
+    Route::post('/update/blog/page', 'updateBlogPage')->name('update.blog.page'); // updateData
+    Route::get('/delete/blog/page/{id}', 'deleteBlogPage')->name('delete.blog.page'); // deleteData
 });
 
 Route::get('/dashboard', function () {

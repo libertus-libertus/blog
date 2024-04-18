@@ -20,11 +20,22 @@
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-mail-send-line"></i>
-                        <span>Landing Page Setting</span>
+                        <i class="fas fa-coins"></i>
+                        <span>Master Data</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{ route('home.slide') }}">Hero Section</a></li>
+                        <li><a href="{{ route('category.page') }}">Category</a></li>
+                        <li><a href="{{ route('blog.page') }}">Blog</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-share-line"></i>
+                        <span>Landing Page</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('home.slide') }}">Carousel</a></li>
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">About Page</a>
                             <ul class="sub-menu" aria-expanded="true">
@@ -36,9 +47,6 @@
                         <li><a href="{{ route('portfolio.page') }}">Portfolio</a></li>
                     </ul>
                 </li>
-
-                <li class="menu-title">Master Data</li>
-                <li><a href="{{ route('category.page') }}">Category</a></li>
             </ul>
         </div>
         <!-- Sidebar -->
