@@ -1,6 +1,6 @@
 <section class="blog">
     <div class="container">
-        <div class="row gx-0 justify-content-center">
+        <div class="row gx-1 justify-content-center">
             <div class="col-lg-4 col-md-6 col-sm-9">
                 <div class="blog__post__item">
                     <div class="blog__post__thumb">
