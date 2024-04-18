@@ -38,7 +38,7 @@ class PortfolioController extends Controller
         $image = $request->file('portfolio_image');
         $nameGenerate = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
 
-        Image::make($image)->resize(1020, 519)->save('upload_images/frontend/portfolio/' . $nameGenerate);
+        Image::make($image)->resize(1366, 768)->save('upload_images/frontend/portfolio/' . $nameGenerate);
         $saveUrl = 'upload_images/frontend/portfolio/' . $nameGenerate;
 
         Portfolio::insert([
@@ -55,7 +55,7 @@ class PortfolioController extends Controller
         );
 
         return redirect()->route('portfolio.page')->with($notification);
-    } // 
+    } //
 
     public function editPortfolioPage($id)
     {
@@ -85,7 +85,7 @@ class PortfolioController extends Controller
             $image = $request->file('portfolio_image');
             $nameGenerate = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
 
-            Image::make($image)->resize(1020, 519)->save('upload_images/frontend/portfolio/' . $nameGenerate);
+            Image::make($image)->resize(1366, 768)->save('upload_images/frontend/portfolio/' . $nameGenerate);
             $saveUrl = 'upload_images/frontend/portfolio/' . $nameGenerate;
 
             Portfolio::findOrFail($portfolioID)->update([
@@ -132,5 +132,10 @@ class PortfolioController extends Controller
         );
 
         return redirect()->back()->with($notification);
+    } // endMethod
+
+    public function detailsPortfolioPage($id) {
+        $portfolio = Portfolio::findOrFail($id);
+        return view('frontend.portfolio_details', compact('portfolio'));
     } // endMethod
 }
