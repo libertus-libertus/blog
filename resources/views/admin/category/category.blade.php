@@ -26,7 +26,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <a href="{{ route('add.blog.category.page') }}" class="btn btn-primary btn-sm" title="Add Data">
+                        <a href="{{ route('add.category.page') }}" class="btn btn-primary btn-sm" title="Add Data">
                             <i class="fas fa-plus"></i>
                             Add Category
                         </a>
@@ -43,16 +43,16 @@
 
                             <tbody>
                                 @php($no = 1)
-                                @foreach ($blogCategory as $item)
+                                @foreach ($category as $item)
                                     <tr>
                                         <td>{{ $no++ }}</td>
-                                        <td>{{ $item->blog_category }}</td>
+                                        <td>{{ $item->category }}</td>
                                         <td>
-                                            <a href="{{ route('edit.blog.category.page', $item->id) }}" class="btn btn-info btn-sm" title="Edit Data">
+                                            <a href="{{ route('edit.category.page', $item->id) }}" class="btn btn-info btn-sm" title="Edit Data">
                                                 <i class="fas fa-edit"></i>
                                                 Edit
                                             </a>
-                                            <a href="{{ route('delete.blog.category.page', $item->id) }}" class="btn btn-danger btn-sm" title="Delete Data" id="delete">
+                                            <a href="{{ route('delete.category.page', $item->id) }}" class="btn btn-danger btn-sm" title="Delete Data" id="delete">
                                                 <i class="fas fa-trash"></i>
                                                 Delete
                                             </a>

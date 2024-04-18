@@ -38,7 +38,7 @@
                 </li>
 
                 <li class="menu-title">Master Data</li>
-                <li><a href="{{ route('blog.category.page') }}">Category</a></li>
+                <li><a href="{{ route('category.page') }}">Category</a></li>
             </ul>
         </div>
         <!-- Sidebar -->

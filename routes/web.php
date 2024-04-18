@@ -3,7 +3,7 @@
 use App\Http\Controllers\Home\HomeSliderController;
 use App\Http\Controllers\Home\AboutController;
 use App\Http\Controllers\Home\PortfolioController;
-use App\Http\Controllers\Home\BlogCategoryController;
+use App\Http\Controllers\Home\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 
@@ -51,13 +51,13 @@ Route::controller(PortfolioController::class)->group(function() {
     Route::get('/details/portfolio/page/{id}', 'detailsPortfolioPage')->name('details.portfolio.page'); // detailsPortfolioPage
 });
 
-Route::controller(BlogCategoryController::class)->group(function () {
-    Route::get('/blog/category/page', 'blogCategoryPage')->name('blog.category.page'); // showData
-    Route::get('/add/blog/category/page', 'addBlogCategoryPage')->name('add.blog.category.page'); // formAddData
-    Route::post('/store/blog/category/page', 'storeBlogCategoryPage')->name('store.blog.category.page'); // saveData
-    Route::get('/edit/blog/category/page/{id}', 'editBlogCategoryPage')->name('edit.blog.category.page'); // formEditData
-    Route::post('/update/blog/category/page', 'updateBlogCategoryPage')->name('update.blog.category.page'); // updateData
-    Route::get('/delete/blog/category/page/{id}', 'deleteBlogCategoryPage')->name('delete.blog.category.page'); // deleteData
+Route::controller(CategoryController::class)->group(function () {
+    Route::get('/category/page', 'categoryPage')->name('category.page'); // showData
+    Route::get('/add/category/page', 'addCategoryPage')->name('add.category.page'); // formAddData
+    Route::post('/store/category/page', 'storeCategoryPage')->name('store.category.page'); // saveData
+    Route::get('/edit/category/page/{id}', 'editCategoryPage')->name('edit.category.page'); // formEditData
+    Route::post('/update/category/page', 'updateCategoryPage')->name('update.category.page'); // updateData
+    Route::get('/delete/category/page/{id}', 'deleteCategoryPage')->name('delete.category.page'); // deleteData
 });
 
 Route::get('/dashboard', function () {
