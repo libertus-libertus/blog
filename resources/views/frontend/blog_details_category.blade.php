@@ -1,6 +1,14 @@
 @extends('frontend.main')
 @section('content')
 
+@section('title')
+    {{ $categoryName->category }}
+@endsection
+
+@php
+    $footer = App\Models\Footer::find(1);
+@endphp
+
 <!-- main-area -->
 <main>
 
@@ -13,7 +21,7 @@
                         <h2 class="title">{{ $categoryName->category }}</h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Blog</li>
                             </ol>
                         </nav>
@@ -23,12 +31,12 @@
         </div>
         <div class="breadcrumb__wrap__icon">
             <ul>
-                <li><img src="assets/img/icons/breadcrumb_icon01.png" alt=""></li>
-                <li><img src="assets/img/icons/breadcrumb_icon02.png" alt=""></li>
-                <li><img src="assets/img/icons/breadcrumb_icon03.png" alt=""></li>
-                <li><img src="assets/img/icons/breadcrumb_icon04.png" alt=""></li>
-                <li><img src="assets/img/icons/breadcrumb_icon05.png" alt=""></li>
-                <li><img src="assets/img/icons/breadcrumb_icon06.png" alt=""></li>
+                <li><img src="{{ asset('frontend/assets/img/icons/breadcrumb_icon01.png') }}" alt=""></li>
+                <li><img src="{{ asset('frontend/assets/img/icons/breadcrumb_icon02.png') }}" alt=""></li>
+                <li><img src="{{ asset('frontend/assets/img/icons/breadcrumb_icon03.png') }}" alt=""></li>
+                <li><img src="{{ asset('frontend/assets/img/icons/breadcrumb_icon04.png') }}" alt=""></li>
+                <li><img src="{{ asset('frontend/assets/img/icons/breadcrumb_icon05.png') }}" alt=""></li>
+                <li><img src="{{ asset('frontend/assets/img/icons/breadcrumb_icon06.png') }}" alt=""></li>
             </ul>
         </div>
     </section>
@@ -49,7 +57,7 @@
                         <div class="standard__blog__content">
                             <div class="blog__post__avatar">
                                 <div class="thumb"><img src="{{ asset($item->blog_image) }}" alt=""></div>
-                                <span class="post__by">By : {{ Auth()->user()->name }}</span>
+                                <span class="post__by">By : Libertus</span>
                             </div>
                             <h2 class="title"><a href="{{ route('details.blog.page', $item->id) }}">{{ $item->blog_title }}</a></h2>
                             <p>{!! Str::limit($item->blog_description, 250) !!}</p>
@@ -179,16 +187,19 @@
                         <div class="homeContact__content">
                             <p>There are many variations of passages of Lorem Ipsum available, but the majority have
                                 suffered alteration in some form</p>
-                            <h2 class="mail"><a href="mailto:Info@webmail.com">Info@webmail.com</a></h2>
+                            <h2 class="mail"><a href="mailto:{{ $footer->email }}">{{ $footer->email }}</a></h2>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="homeContact__form">
-                            <form action="#">
-                                <input type="text" placeholder="Enter name*">
-                                <input type="email" placeholder="Enter mail*">
-                                <input type="number" placeholder="Enter number*">
-                                <textarea name="message" placeholder="Enter Massage*"></textarea>
+                            <form action="{{ route('store.message') }}" method="post">
+                                @csrf
+
+                                <input type="text" name="username" placeholder="Username">
+                                <input type="email" name="email" placeholder="E-Mail">
+                                <input type="text" name="subject" placeholder="Subject">
+                                <input type="number" name="phone" placeholder="Phone number">
+                                <textarea name="message" placeholder="Type your message here"></textarea>
                                 <button type="submit">Send Message</button>
                             </form>
                         </div>

@@ -1,6 +1,10 @@
 @extends('frontend.main')
 @section('content')
 
+@section('title')
+    Solusi digitalisasi
+@endsection
+
 <!-- banner-area -->
 @include('frontend.landing_page.carousel')
 <!-- banner-area-end -->

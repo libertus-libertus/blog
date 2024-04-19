@@ -1,6 +1,14 @@
 @extends('frontend.main')
 @section('content')
 
+@section('title')
+    {{ $blog->blog_title }}
+@endsection
+
+@php
+    $footer = App\Models\Footer::find(1);
+@endphp
+
 <!-- main-area -->
 <main>
 
@@ -54,7 +62,7 @@
                                 <li>
                                     <small>
                                         <i class="fal fa-user-alt"></i>
-                                        <a href="#">Author: {{ Auth()->user()->name }}</a>
+                                        <a href="#">By: Libertus</a>
                                     </small>
                                 </li>
                             </ul>
@@ -326,16 +334,19 @@
                         <div class="homeContact__content">
                             <p>There are many variations of passages of Lorem Ipsum available, but the majority have
                                 suffered alteration in some form</p>
-                            <h2 class="mail"><a href="mailto:codelinkursus@gmail.com">codelinkursus@gmail.com</a></h2>
+                            <h2 class="mail"><a href="mailto:{{ $footer->email }}">{{ $footer->email }}</a></h2>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="homeContact__form">
-                            <form action="#">
-                                <input type="text" placeholder="Enter name*">
-                                <input type="email" placeholder="Enter mail*">
-                                <input type="number" placeholder="Enter number*">
-                                <textarea name="message" placeholder="Enter Massage*"></textarea>
+                            <form action="{{ route('store.message') }}" method="post">
+                                @csrf
+
+                                <input type="text" name="username" placeholder="Username">
+                                <input type="email" name="email" placeholder="E-Mail">
+                                <input type="text" name="subject" placeholder="Subject">
+                                <input type="number" name="phone" placeholder="Phone number">
+                                <textarea name="message" placeholder="Type your message here"></textarea>
                                 <button type="submit">Send Message</button>
                             </form>
                         </div>

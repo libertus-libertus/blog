@@ -1,6 +1,14 @@
 @extends('frontend.main')
 @section('content')
 
+@section('title')
+    {{ $portfolio->portfolio_title }}
+@endsection
+
+@php
+    $footer = App\Models\Footer::find(1);
+@endphp
+
 <!-- main-area -->
 <main>
 
@@ -62,8 +70,7 @@
                             <h5 class="title">Project Information</h5>
                             <ul class="sidebar__contact__info">
                                 <li><span>Date :</span> April, 2024</li>
-                                <li><span>Loc :</span> Padang, Sumatera Barat</li>
-                                <li><span>Client :</span> Indonesia</li>
+                                <li><span>Loc : Indonesia</span></li>
                                 <li class="cagegory"><span>Category :</span>
                                     <a href="portfolio.html">Photo,</a>
                                     <a href="portfolio.html">UI/UX</a>
@@ -75,9 +82,9 @@
                         <div class="widget">
                             <h5 class="title">Contact Information</h5>
                             <ul class="sidebar__contact__info">
-                                <li><span>Address :</span> Jl. Kanal Banjir No.14C, Kel. Alai parak kopi, Kec. Padang utara, Kota padang.</li>
-                                <li><span>Mail :</span> codelinkursus@gmail.com</li>
-                                <li><span>Phone :</span> 0813-4611-1649</li>
+                                <li><span>Address : {{ $footer->address }}</span></li>
+                                <li><span>Mail : {{ $footer->email }}</span></li>
+                                <li><span>Phone : {{ $footer->number }}</span></li>
                             </ul>
                             <ul class="sidebar__contact__social">
                                 <li><a href="#"><i class="fab fa-dribbble"></i></a></li>

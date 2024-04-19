@@ -26,6 +26,7 @@
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('category.page') }}">Category</a></li>
                         <li><a href="{{ route('blog.page') }}">Blog</a></li>
+                        <li><a href="{{ route('contact.message') }}">Client Messages</a></li>
                     </ul>
                 </li>
 
@@ -45,6 +46,7 @@
                             </ul>
                         </li>
                         <li><a href="{{ route('portfolio.page') }}">Portfolio</a></li>
+                        <li><a href="{{ route('footer.page') }}">Footer</a></li>
                     </ul>
                 </li>
             </ul>

@@ -158,7 +158,7 @@ class BlogController extends Controller
 
     public function blog() {
         $category = Category::orderBy('category', 'ASC')->get();
-        $blog = Blog::latest()->get();
+        $blog = Blog::latest()->paginate(3);
         return view('frontend.blog', compact('blog', 'category'));
     }
 }
