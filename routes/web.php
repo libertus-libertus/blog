@@ -68,6 +68,11 @@ Route::controller(BlogController::class)->group(function () {
     Route::get('/edit/blog/page/{id}', 'editBlogPage')->name('edit.blog.page'); // formEditData
     Route::post('/update/blog/page', 'updateBlogPage')->name('update.blog.page'); // updateData
     Route::get('/delete/blog/page/{id}', 'deleteBlogPage')->name('delete.blog.page'); // deleteData
+    Route::get('/details/blog/page/{id}', 'detailsBlogPage')->name('details.blog.page'); // blogSinglePageArticle
+    Route::get('/category/blog/page/{id}', 'categoryBlogPage')->name('category.blog.page'); // klikCategoryFilter
+    Route::get('/blog', 'blog')->name('home.blog'); // blogLandingPage
+
+
 });
 
 Route::get('/dashboard', function () {
